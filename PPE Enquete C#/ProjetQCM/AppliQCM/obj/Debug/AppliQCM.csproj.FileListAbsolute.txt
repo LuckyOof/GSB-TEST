@@ -1,0 +1,10 @@
+E:\Copie disque dur Corine\Corine\Année 2023 - 2024 - SIO2\AP\AP Enquête\PPE Enquete C# - A distribuer\ProjetQCM\AppliQCM\bin\Debug\AppliQCM.exe.config
+E:\Copie disque dur Corine\Corine\Année 2023 - 2024 - SIO2\AP\AP Enquête\PPE Enquete C# - A distribuer\ProjetQCM\AppliQCM\bin\Debug\AppliQCM.exe
+E:\Copie disque dur Corine\Corine\Année 2023 - 2024 - SIO2\AP\AP Enquête\PPE Enquete C# - A distribuer\ProjetQCM\AppliQCM\bin\Debug\AppliQCM.pdb
+E:\Copie disque dur Corine\Corine\Année 2023 - 2024 - SIO2\AP\AP Enquête\PPE Enquete C# - A distribuer\ProjetQCM\AppliQCM\obj\Debug\AppliQCM.csproj.AssemblyReference.cache
+E:\Copie disque dur Corine\Corine\Année 2023 - 2024 - SIO2\AP\AP Enquête\PPE Enquete C# - A distribuer\ProjetQCM\AppliQCM\obj\Debug\AppliQCM.FrmAccueil.resources
+E:\Copie disque dur Corine\Corine\Année 2023 - 2024 - SIO2\AP\AP Enquête\PPE Enquete C# - A distribuer\ProjetQCM\AppliQCM\obj\Debug\AppliQCM.Properties.Resources.resources
+E:\Copie disque dur Corine\Corine\Année 2023 - 2024 - SIO2\AP\AP Enquête\PPE Enquete C# - A distribuer\ProjetQCM\AppliQCM\obj\Debug\AppliQCM.csproj.GenerateResource.cache
+E:\Copie disque dur Corine\Corine\Année 2023 - 2024 - SIO2\AP\AP Enquête\PPE Enquete C# - A distribuer\ProjetQCM\AppliQCM\obj\Debug\AppliQCM.csproj.CoreCompileInputs.cache
+E:\Copie disque dur Corine\Corine\Année 2023 - 2024 - SIO2\AP\AP Enquête\PPE Enquete C# - A distribuer\ProjetQCM\AppliQCM\obj\Debug\AppliQCM.exe
+E:\Copie disque dur Corine\Corine\Année 2023 - 2024 - SIO2\AP\AP Enquête\PPE Enquete C# - A distribuer\ProjetQCM\AppliQCM\obj\Debug\AppliQCM.pdb

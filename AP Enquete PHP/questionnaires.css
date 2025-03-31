@@ -1,0 +1,29 @@
+/* Titres */
+h1{ font-size:14pt; color: red; }
+h2{ font-size:80%; color: green; text-align: center; }
+
+/* Paragraphes */
+p { font-size:80%}
+
+/* Formulaire */
+form { background-color:lightgrey; padding:10px; width:350px; font-family:tahoma; font-size: 10pt;}
+
+/* Cadres et leurs titres */
+fieldset { padding:10px; margin-bottom:5px;}
+legend { color:yellow; font-weight:bold; font-size:120%; }
+
+/* Etiquettes */
+label { margin-top:20px; display:block; font-weight:bold}
+label.inline { display:inline }
+
+/* Zones de saisie en général (y compris les boutons de commande) */
+input { border:1px solid black; background-color:#A6BEDE; }
+
+/* Zones de liste */
+select, option { background-color:#A6BEDE;}
+
+/* Boîte de saisie */
+textarea { font-family:tahoma; font-size: 10pt; border:1px solid black; background-color:#A6BEDE;}
+
+/* Tableaux */
+table {font-size: 10pt;}
