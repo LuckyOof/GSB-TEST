@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using MySql.Data.MySqlClient;
 
 namespace AppliQCM
 {
@@ -301,6 +302,74 @@ namespace AppliQCM
             unEmplacement.Y += maListBox.Height + 10;
 
             return unEmplacement;
+        }
+        public void Valider()
+        {
+            string connectionString = "server=localhost;database=qcm_enquete;uid=root;pwd=;";
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                // Insert dans table questionnaire (si pas déjà fait)
+                string cle = xr.SelectSingleNode("questionnaire").Attributes["cle"].Value;
+                string nom = xr.SelectSingleNode("questionnaire").Attributes["name"].Value;
+                string titre = xr.SelectSingleNode("questionnaire").Attributes["displayName"].Value;
+                string description = xr.SelectSingleNode("questionnaire").SelectSingleNode("description")?.InnerText ?? "";
+
+                string insertQuestionnaire = @"INSERT IGNORE INTO questionnaire (cle, name, displayName, description)
+                                       VALUES (@cle, @name, @titre, @desc)";
+                using (MySqlCommand cmd = new MySqlCommand(insertQuestionnaire, conn))
+                {
+                    cmd.Parameters.AddWithValue("@cle", cle);
+                    cmd.Parameters.AddWithValue("@name", nom);
+                    cmd.Parameters.AddWithValue("@titre", titre);
+                    cmd.Parameters.AddWithValue("@desc", description);
+                    cmd.ExecuteNonQuery();
+                }
+
+                int rang = 1;
+
+                foreach (Control ctrl in this.Controls)
+                {
+                    if (ctrl is Label label && label.Name.EndsWith("Label"))
+                    {
+                        string nomQuestion = label.Name.Replace("Label", "");
+                        Control champ = this.Controls.Find(nomQuestion, false).FirstOrDefault();
+
+                        if (champ == null) continue;
+
+                        List<string> reponses = new List<string>();
+
+                        if (champ is TextBox tb)
+                            reponses.Add(tb.Text);
+
+                        else if (champ is ComboBox cb && cb.SelectedItem != null)
+                            reponses.Add(cb.SelectedItem.ToString());
+
+                        else if (champ is ListBox lb)
+                        {
+                            foreach (var item in lb.SelectedItems)
+                                reponses.Add(item.ToString());
+                        }
+
+                        foreach (string rep in reponses)
+                        {
+                            string insertReponse = @"INSERT INTO reponses (cle_questionnaire, rang, date_creation, reponse)
+                                             VALUES (@cle, @rang, NOW(), @reponse)";
+                            using (MySqlCommand cmd = new MySqlCommand(insertReponse, conn))
+                            {
+                                cmd.Parameters.AddWithValue("@cle", cle);
+                                cmd.Parameters.AddWithValue("@rang", rang++);
+                                cmd.Parameters.AddWithValue("@reponse", rep);
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                }
+
+                MessageBox.Show("Réponses enregistrées avec succès.", "Valider", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
     }

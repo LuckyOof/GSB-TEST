@@ -32,6 +32,7 @@
             this.mnuFichier = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuOuvrir = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFermer = new System.Windows.Forms.ToolStripMenuItem();
+            this.validerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQuitter = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFenetre = new System.Windows.Forms.ToolStripMenuItem();
             this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,7 +41,6 @@
             this.mnuAide = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuApropos = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.validerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,6 +83,13 @@
             this.mnuFermer.Size = new System.Drawing.Size(180, 22);
             this.mnuFermer.Text = "Fermer";
             this.mnuFermer.Click += new System.EventHandler(this.mnuFermer_Click);
+            // 
+            // validerToolStripMenuItem
+            // 
+            this.validerToolStripMenuItem.Name = "validerToolStripMenuItem";
+            this.validerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.validerToolStripMenuItem.Text = "Valider";
+            this.validerToolStripMenuItem.Click += new System.EventHandler(this.validerToolStripMenuItem_Click);
             // 
             // mnuQuitter
             // 
@@ -133,18 +140,13 @@
             // mnuApropos
             // 
             this.mnuApropos.Name = "mnuApropos";
-            this.mnuApropos.Size = new System.Drawing.Size(131, 22);
+            this.mnuApropos.Size = new System.Drawing.Size(180, 22);
             this.mnuApropos.Text = "A Propos...";
+            this.mnuApropos.Click += new System.EventHandler(this.mnuApropos_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // validerToolStripMenuItem
-            // 
-            this.validerToolStripMenuItem.Name = "validerToolStripMenuItem";
-            this.validerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.validerToolStripMenuItem.Text = "Valider";
             // 
             // FrmAccueil
             // 

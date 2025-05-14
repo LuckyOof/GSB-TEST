@@ -124,5 +124,22 @@ namespace AppliQCM
         {
 
         }
+
+        private void validerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild is FrmQuestionnaire fenetre)
+            {
+                fenetre.Valider();
+            }
+        }
+
+        private void mnuApropos_Click(object sender, EventArgs e)
+        {
+            string message =
+              "Projet GSB - Enquête\n" +
+              "Version : 1.0\n" +
+              "Développé par : Laghoueg Khaled\n" ;
+            MessageBox.Show(message, "À propos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
