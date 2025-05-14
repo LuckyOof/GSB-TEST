@@ -52,3 +52,7 @@ C:\Users\klagh\Documents\GitHub\GSB-TEST\PPE Enquete C#\ProjetQCM\AppliQCM\bin\D
 C:\Users\klagh\Documents\GitHub\GSB-TEST\PPE Enquete C#\ProjetQCM\AppliQCM\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\klagh\Documents\GitHub\GSB-TEST\PPE Enquete C#\ProjetQCM\AppliQCM\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\klagh\Documents\GitHub\GSB-TEST\PPE Enquete C#\ProjetQCM\AppliQCM\obj\Debug\AppliQCM.csproj.Up2Date
+C:\Users\klagh\Documents\GitHub\GSB-TEST\PPE Enquete C#\ProjetQCM\AppliQCM\bin\Debug\AppliQCM.exe.manifest
+C:\Users\klagh\Documents\GitHub\GSB-TEST\PPE Enquete C#\ProjetQCM\AppliQCM\bin\Debug\AppliQCM.application
+C:\Users\klagh\Documents\GitHub\GSB-TEST\PPE Enquete C#\ProjetQCM\AppliQCM\obj\Debug\AppliQCM.exe.manifest
+C:\Users\klagh\Documents\GitHub\GSB-TEST\PPE Enquete C#\ProjetQCM\AppliQCM\obj\Debug\AppliQCM.application

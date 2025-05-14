@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\klagh\\Documents\\GitHub\\GSB-TEST\\PPE Enquete C#\\ProjetQCM\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9A4342B1-239A-4302-AA59-4979B85808C2}|AppliQCM\\AppliQCM.csproj|c:\\users\\klagh\\documents\\github\\gsb-test\\ppe enquete c#\\projetqcm\\appliqcm\\frmquestionnaire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A4342B1-239A-4302-AA59-4979B85808C2}|AppliQCM\\AppliQCM.csproj|solutionrelative:appliqcm\\frmquestionnaire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9A4342B1-239A-4302-AA59-4979B85808C2}|AppliQCM\\AppliQCM.csproj|C:\\Users\\klagh\\Documents\\GitHub\\GSB-TEST\\PPE Enquete C#\\ProjetQCM\\appliqcm\\frmaccueil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9A4342B1-239A-4302-AA59-4979B85808C2}|AppliQCM\\AppliQCM.csproj|solutionrelative:appliqcm\\frmaccueil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9A4342B1-239A-4302-AA59-4979B85808C2}|AppliQCM\\AppliQCM.csproj|c:\\users\\klagh\\documents\\github\\gsb-test\\ppe enquete c#\\projetqcm\\appliqcm\\frmaccueil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{9A4342B1-239A-4302-AA59-4979B85808C2}|AppliQCM\\AppliQCM.csproj|C:\\Users\\klagh\\Documents\\GitHub\\GSB-TEST\\PPE Enquete C#\\ProjetQCM\\appliqcm\\frmaccueil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9A4342B1-239A-4302-AA59-4979B85808C2}|AppliQCM\\AppliQCM.csproj|solutionrelative:appliqcm\\frmaccueil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A4342B1-239A-4302-AA59-4979B85808C2}|AppliQCM\\AppliQCM.csproj|C:\\Users\\klagh\\Documents\\GitHub\\GSB-TEST\\PPE Enquete C#\\ProjetQCM\\appliqcm\\frmquestionnaire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9A4342B1-239A-4302-AA59-4979B85808C2}|AppliQCM\\AppliQCM.csproj|solutionrelative:appliqcm\\frmquestionnaire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9A4342B1-239A-4302-AA59-4979B85808C2}|AppliQCM\\AppliQCM.csproj|C:\\Users\\klagh\\Documents\\GitHub\\GSB-TEST\\PPE Enquete C#\\ProjetQCM\\appliqcm\\frmquestionnaire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -26,17 +26,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "FrmQuestionnaire.cs",
               "DocumentMoniker": "C:\\Users\\klagh\\Documents\\GitHub\\GSB-TEST\\PPE Enquete C#\\ProjetQCM\\AppliQCM\\FrmQuestionnaire.cs",
               "RelativeDocumentMoniker": "AppliQCM\\FrmQuestionnaire.cs",
               "ToolTip": "C:\\Users\\klagh\\Documents\\GitHub\\GSB-TEST\\PPE Enquete C#\\ProjetQCM\\AppliQCM\\FrmQuestionnaire.cs",
               "RelativeToolTip": "AppliQCM\\FrmQuestionnaire.cs",
-              "ViewState": "AgIAAFIBAAAAAAAAAADwv3YBAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAFIBAAAAAAAAAADwv3kBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-07T10:43:24.355Z",
               "EditorCaption": ""
@@ -50,33 +50,30 @@
               "ToolTip": "C:\\Users\\klagh\\Documents\\GitHub\\GSB-TEST\\PPE Enquete C#\\ProjetQCM\\AppliQCM\\FrmQuestionnaire.cs [Design]",
               "RelativeToolTip": "AppliQCM\\FrmQuestionnaire.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T10:39:38.896Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-07T10:39:38.896Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "FrmAccueil.cs [Design]",
               "DocumentMoniker": "C:\\Users\\klagh\\Documents\\GitHub\\GSB-TEST\\PPE Enquete C#\\ProjetQCM\\AppliQCM\\FrmAccueil.cs",
               "RelativeDocumentMoniker": "AppliQCM\\FrmAccueil.cs",
               "ToolTip": "C:\\Users\\klagh\\Documents\\GitHub\\GSB-TEST\\PPE Enquete C#\\ProjetQCM\\AppliQCM\\FrmAccueil.cs [Design]",
               "RelativeToolTip": "AppliQCM\\FrmAccueil.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T10:38:56.853Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-07T10:38:56.853Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "FrmAccueil.cs",
               "DocumentMoniker": "C:\\Users\\klagh\\Documents\\GitHub\\GSB-TEST\\PPE Enquete C#\\ProjetQCM\\AppliQCM\\FrmAccueil.cs",
               "RelativeDocumentMoniker": "AppliQCM\\FrmAccueil.cs",
               "ToolTip": "C:\\Users\\klagh\\Documents\\GitHub\\GSB-TEST\\PPE Enquete C#\\ProjetQCM\\AppliQCM\\FrmAccueil.cs",
               "RelativeToolTip": "AppliQCM\\FrmAccueil.cs",
-              "ViewState": "AgIAAHMAAAAAAAAAAAAswIwAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T10:40:42.113Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T10:40:42.113Z"
             }
           ]
         }
