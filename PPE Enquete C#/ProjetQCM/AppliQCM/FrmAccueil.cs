@@ -50,6 +50,7 @@ namespace AppliQCM
         private void mnuFermer_Click(object sender, EventArgs e)
         {
             // On recupère la fenêtre fille active
+            AfficherRecapitulatif();
             Form fenFille = this.ActiveMdiChild;
             if (fenFille != null)
                 fenFille.Close();
@@ -58,6 +59,70 @@ namespace AppliQCM
         private void mnuQuitter_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cascadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(MdiLayout.Cascade);
+        }
+
+        private void mnuHorizontale_Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(MdiLayout.TileVertical);
+        }
+
+        private void mnuVerticale_Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(MdiLayout.TileHorizontal);
+        }
+
+        private void AfficherRecapitulatif()
+        {
+            if (this.ActiveMdiChild is FrmQuestionnaire fenQuestionnaire)
+            {
+                StringBuilder recap = new StringBuilder();
+
+                foreach (Control ctrl in fenQuestionnaire.Controls)
+                {
+                    if (ctrl is Label label && label.Name.EndsWith("Label"))
+                    {
+                        // Retrouver le contrôle associé
+                        string baseName = label.Name.Replace("Label", "");
+                        Control reponseCtrl = fenQuestionnaire.Controls.Find(baseName, false).FirstOrDefault();
+
+                        recap.AppendLine(label.Text);
+
+                        if (reponseCtrl is TextBox tb)
+                        {
+                            recap.AppendLine("→ " + tb.Text);
+                        }
+                        else if (reponseCtrl is ComboBox cb)
+                        {
+                            recap.AppendLine("→ " + cb.SelectedItem?.ToString());
+                        }
+                        else if (reponseCtrl is ListBox lb)
+                        {
+                            foreach (var item in lb.SelectedItems)
+                            {
+                                recap.AppendLine("→ " + item.ToString());
+                            }
+                        }
+
+                        recap.AppendLine(); // ligne vide pour séparer les questions
+                    }
+                }
+
+                MessageBox.Show(recap.ToString(), "Récapitulatif des réponses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Aucun questionnaire actif.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void mnuFichier_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -143,7 +143,12 @@ namespace AppliQCM
                         case "text":
                             emplacement = AddTextBox(unNoeud, lesControles, emplacement, premierNoeud);
                             break;
-
+                        case "combo":
+                            emplacement = AddComboBox(unNoeud, lesControles, emplacement, premierNoeud);
+                            break;
+                        case "liste":
+                            emplacement = AddListBox(unNoeud, lesControles, emplacement, premierNoeud);
+                            break;
                     }
                 }
             }
@@ -180,59 +185,39 @@ namespace AppliQCM
 
         private Point AddTextBox(XmlNode unNoeud, Control.ControlCollection desControles, Point unEmplacement, string tag)
         {
-            // Création d'un contrôle TextBox.
             TextBox maTextBox = new TextBox();
 
-            // Il y a-t-il une réponse par défaut ? 
             if (unNoeud.SelectSingleNode("defaultreponse") != null)
                 maTextBox.Text = unNoeud.SelectSingleNode("defaultreponse").InnerText;
 
-            // Valeur de l'attribut "name" de la balise <question> en cours
             if (unNoeud.Attributes["name"] != null)
                 maTextBox.Name = unNoeud.Attributes["name"].Value;
 
             maTextBox.Tag = tag;
             maTextBox.Width = LARGEUR_CONTROLES;
 
-            // Il y a-t-il un nombre maximal de caractères ? 
             if (unNoeud.SelectSingleNode("maxCharacters") != null)
                 maTextBox.MaxLength = int.Parse(unNoeud.SelectSingleNode("maxCharacters").InnerText);
 
-            // Calculer le nombre de lignes qui devront être affichées
             if (maTextBox.MaxLength > 0)
             {
                 int numLines = (maTextBox.MaxLength / CARACTERES_PAR_LIGNE) + 1;
-
-                // Calculer la largeur de la TextBox, et par conséquent s'il y a lieu
-                // d'avoir des barres de défilement
                 if (numLines == 1)
                     maTextBox.Multiline = false;
                 else
                 {
-                    if (numLines >= 4)
-                    {
-                        maTextBox.Multiline = true;
-                        maTextBox.Height = 4 * HAUTEUR_PAR_LIGNE;
-                        maTextBox.ScrollBars = ScrollBars.Vertical;
-                    }
-                    else
-                    {
-                        maTextBox.Multiline = true;
-                        maTextBox.Height = numLines * HAUTEUR_PAR_LIGNE;
-                        maTextBox.ScrollBars = ScrollBars.None;
-                    }
+                    maTextBox.Multiline = true;
+                    maTextBox.Height = Math.Min(numLines, 4) * HAUTEUR_PAR_LIGNE;
+                    maTextBox.ScrollBars = numLines >= 4 ? ScrollBars.Vertical : ScrollBars.None;
                 }
             }
 
-            // Création d'un Label
             Label monLabel = new Label();
             monLabel.Name = maTextBox.Name + "Label";
             if (unNoeud.SelectSingleNode("text") != null)
                 monLabel.Text = unNoeud.SelectSingleNode("text").InnerText;
-
             monLabel.Width = LARGEUR_CONTROLES;
 
-            // Ajout à la collection
             monLabel.Location = unEmplacement;
             desControles.Add(monLabel);
             unEmplacement.Y += monLabel.Height;
@@ -244,5 +229,80 @@ namespace AppliQCM
             return unEmplacement;
         }
 
+        private Point AddComboBox(XmlNode unNoeud, Control.ControlCollection desControles, Point unEmplacement, string tag)
+        {
+            ComboBox maComboBox = new ComboBox();
+            maComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            maComboBox.Width = LARGEUR_CONTROLES;
+
+            if (unNoeud.Attributes["name"] != null)
+                maComboBox.Name = unNoeud.Attributes["name"].Value;
+            maComboBox.Tag = tag;
+
+            foreach (XmlNode reponse in unNoeud.SelectNodes("reponses/reponse"))
+            {
+                maComboBox.Items.Add(reponse.InnerText);
+                if (reponse.Attributes["default"]?.Value == "true")
+                    maComboBox.SelectedItem = reponse.InnerText;
+            }
+
+            Label monLabel = new Label();
+            monLabel.Name = maComboBox.Name + "Label";
+            if (unNoeud.SelectSingleNode("text") != null)
+                monLabel.Text = unNoeud.SelectSingleNode("text").InnerText;
+            monLabel.Width = LARGEUR_CONTROLES;
+
+            monLabel.Location = unEmplacement;
+            desControles.Add(monLabel);
+            unEmplacement.Y += monLabel.Height;
+
+            maComboBox.Location = unEmplacement;
+            desControles.Add(maComboBox);
+            unEmplacement.Y += maComboBox.Height + 10;
+
+            return unEmplacement;
+        }
+
+        private Point AddListBox(XmlNode unNoeud, Control.ControlCollection desControles, Point unEmplacement, string tag)
+        {
+            ListBox maListBox = new ListBox();
+            maListBox.SelectionMode = SelectionMode.MultiSimple;
+            maListBox.Width = LARGEUR_CONTROLES;
+
+            if (unNoeud.Attributes["name"] != null)
+                maListBox.Name = unNoeud.Attributes["name"].Value;
+            maListBox.Tag = tag;
+
+            int index = 0;
+            foreach (XmlNode reponse in unNoeud.SelectNodes("reponses/reponse"))
+            {
+                maListBox.Items.Add(reponse.InnerText);
+                if (reponse.Attributes["default"]?.Value == "true")
+                    maListBox.SetSelected(index, true);
+                index++;
+            }
+
+            Label monLabel = new Label();
+            monLabel.Name = maListBox.Name + "Label";
+            if (unNoeud.SelectSingleNode("text") != null)
+                monLabel.Text = unNoeud.SelectSingleNode("text").InnerText;
+            monLabel.Width = LARGEUR_CONTROLES;
+
+            monLabel.Location = unEmplacement;
+            desControles.Add(monLabel);
+            unEmplacement.Y += monLabel.Height;
+
+            maListBox.Location = unEmplacement;
+            int nbItems = maListBox.Items.Count;
+            int visibleItems = Math.Min(nbItems, 5);
+            maListBox.Height = visibleItems * HAUTEUR_PAR_LIGNE;
+
+            desControles.Add(maListBox);
+            unEmplacement.Y += maListBox.Height + 10;
+
+            return unEmplacement;
+        }
+
     }
+
 }

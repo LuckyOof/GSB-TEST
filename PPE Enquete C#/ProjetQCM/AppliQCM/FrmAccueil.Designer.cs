@@ -40,6 +40,7 @@
             this.mnuAide = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuApropos = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.validerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,10 +63,12 @@
             this.mnuFichier.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuOuvrir,
             this.mnuFermer,
+            this.validerToolStripMenuItem,
             this.mnuQuitter});
             this.mnuFichier.Name = "mnuFichier";
             this.mnuFichier.Size = new System.Drawing.Size(54, 20);
             this.mnuFichier.Text = "Fichier";
+            this.mnuFichier.Click += new System.EventHandler(this.mnuFichier_Click);
             // 
             // mnuOuvrir
             // 
@@ -103,18 +106,21 @@
             this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
             this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.cascadeToolStripMenuItem.Text = "Cascade";
+            this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.cascadeToolStripMenuItem_Click);
             // 
             // mnuHorizontale
             // 
             this.mnuHorizontale.Name = "mnuHorizontale";
             this.mnuHorizontale.Size = new System.Drawing.Size(188, 22);
             this.mnuHorizontale.Text = "Mosaïque horizontale";
+            this.mnuHorizontale.Click += new System.EventHandler(this.mnuHorizontale_Click);
             // 
             // mnuVerticale
             // 
             this.mnuVerticale.Name = "mnuVerticale";
             this.mnuVerticale.Size = new System.Drawing.Size(188, 22);
             this.mnuVerticale.Text = "Mosaïque verticale";
+            this.mnuVerticale.Click += new System.EventHandler(this.mnuVerticale_Click);
             // 
             // mnuAide
             // 
@@ -133,6 +139,12 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // validerToolStripMenuItem
+            // 
+            this.validerToolStripMenuItem.Name = "validerToolStripMenuItem";
+            this.validerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.validerToolStripMenuItem.Text = "Valider";
             // 
             // FrmAccueil
             // 
@@ -166,6 +178,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuAide;
         private System.Windows.Forms.ToolStripMenuItem mnuApropos;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem validerToolStripMenuItem;
     }
 }
 
